@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 5px;
     box-sizing: border-box;
 }
 
@@ -17,4 +17,87 @@ body {
     margin: 0 auto;
     
     background: #FFFBEF;
+}
+
+.food-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    border: 3px solid #E1A051;
+}
+
+img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+h3 {
+    font-family: Poppins, sans-serif;
+    font-size: 24px;
+    padding: 15px;
+}
+
+p{
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    padding: 0 15px;
+    color: #222322;
+}
+
+button {
+    width: calc(100% - 30px);
+    margin: 15px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #830035;
+    color: #ffffff;
+
+    padding: 12px;
+}
+
+.category-card {
+    width: 150px;
+    height: 110px;
+
+    background: #fff;
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 30px;
+
+    gap: 10px;
+
+    img {
+        width: 50px;
+    }
+
+    span {
+        font-size: 14px;
+        color: #222322;
+    }
+
+}
+
+.categories {
+    display: flex;
+
+    padding-left: 17px;
+
+    gap: 15px;
+
+    overflow-x: auto;
+
+    padding-bottom: 30px;
 }

@@ -22,23 +22,33 @@ onMounted(() => {
 
 <template>
   <div class="home">
-    <h1>Welcome, Jane Doe</h1>
+    <header>
+      <h1>Welcome, Jane Doe</h1>
+      <p>What would you like to order today?</p>
+    </header>
 
-    <CategoryCard 
-    v-for="category in categories"
-    :key="category.id"
-    :category="category"
-    :selected="selectedCategory?.id === category.id"
+    <section class="categories">
+      <CategoryCard 
+      
+      v-for="category in categories"
+      :key="category.id"
+      :category="category"
+      :selected="selectedCategory?.id === category.id"
 
-    @select="selectedCategory = $event"
-    />
+      @select="selectedCategory = $event"
+      />
+    </section>
 
-    <h3>Recent Bought Items</h3>
-    <FoodCard :food="testFood" />
+    <section class="food-items">
 
-    <h3> Popular Items of the week </h3>
-    <FoodCard :food="testFood" />
+      <h3>Recent Bought Items</h3>
+      <FoodCard :food="testFood" />
 
+      <h3> Popular Items of the week </h3>
+      <FoodCard :food="testFood" />
+
+    </section>
+    
   </div>
 </template>
 
