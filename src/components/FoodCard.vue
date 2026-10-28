@@ -20,9 +20,9 @@ import { useCart } from '../composables/useCart.js';
         
         <p> {{ food.description }}</p>
 
-        <span> {{ food.price }} kr</span>
-
-        <button @click="addToCart(food)"> Add to Cart </button>
+        <button 
+        class="price-btn"
+        @click="addToCart(food)"> {{  food.price }},00 kr. </button>
     </div>
         
 </template>

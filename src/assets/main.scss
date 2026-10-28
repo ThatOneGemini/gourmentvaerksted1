@@ -20,13 +20,15 @@ body {
 }
 
 .food-card {
+    width: 270px;
     background: #fff;
+
+    border: 3px solid #E1A051;
     border-radius: 10px;
+
     overflow: hidden;
 
     margin-bottom: 20px;
-
-    border: 3px solid #E1A051;
 }
 
 img {
@@ -48,17 +50,20 @@ p{
     color: #222322;
 }
 
-button {
-    width: calc(100% - 30px);
-    margin: 15px;
-
-    border: none;
-    border-radius: 5px;
-
+.price-btn {
     background: #830035;
     color: #ffffff;
 
-    padding: 12px;
+    font-weight: 600;
+    border: none;
+
+    border-radius: 5px;
+    padding: 8px 16px;
+
+    float: right;
+    margin: 10px;
+
+    cursor: pointer;
 }
 
 .category-card {
