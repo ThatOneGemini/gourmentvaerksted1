@@ -1,15 +1,25 @@
 <script setup>
-
+import { useRouter } from 'vue-router';
 import { useCart } from '../composables/useCart.js';
-    const props = defineProps({
-        food: Object
-    });
 
-    const { addToCart } = useCart();
+const router = useRouter();
+
+const props = defineProps({
+    food: Object
+});
+
+const { addToCart } = useCart();
+
+function openFood() {
+    router.push(`/food/${props.food.id}`);
+}
 </script>
 
 <template>
-    <div class="food-card">
+    <div class="food-card"
+    @click="openFood"
+    >
+    
 
         <img 
         :src="food.image"
@@ -22,7 +32,7 @@ import { useCart } from '../composables/useCart.js';
 
         <button 
         class="price-btn"
-        @click="addToCart(food)"> {{  food.price }},00 kr. </button>
+        @click.stop="addToCart(food)"> {{  food.price  }},00 kr. </button>
     </div>
         
 </template>

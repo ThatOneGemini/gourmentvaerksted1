@@ -8,7 +8,7 @@
 
     <p>{{ food.description }}</p>
 
-    <h2> {{ food.price}} kr </h2>
+    <h2> {{ food.price }} kr </h2>
 
     <button @click="addToCart(food)">Add to Cart</button>
     

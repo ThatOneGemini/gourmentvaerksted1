@@ -13,9 +13,6 @@ const { foods, loadFoods } = useMenu();
 
 onMounted(() => {
     loadFoods();
-
-    console.log('All foods', foods.value);
-    console.log('Filtered', filteredFoods.value);
 });
 
 setTimeout(() => {
@@ -26,22 +23,26 @@ const categoryId = Number(route.params.category);
 
 const filteredFoods = computed(() => {
     return foods.value.filter(
-        foods => foods.categoryId === categoryId
+        foods => Number(foods.categoryId) === Number(route.params.category)
     );
 });
 
-console.log(route.params.category);
 </script>
 
 <template>
 
-    <SearchBar />
-    <div class="food-list">
-        <FoodCard 
-        v-for="food in filteredFoods" 
-        :key="food.id" 
-        :food="food" 
-        />
-    </div>
+    <h2>Wok Pot Thai</h2>
+    
+    <div class="menu">
+        <SearchBar />
 
+        <div class="food-list">
+            <FoodCard 
+            v-for="food in filteredFoods" 
+            :key="food.id" 
+            :food="food" 
+            />
+        </div>
+
+    </div>
 </template>
