@@ -11,6 +11,9 @@ const props = defineProps({
 const { addToCart } = useCart();
 
 function openFood() {
+    console.log(props.food);
+    console.log(props.food.id);
+
     router.push(`/food/${props.food.id}`);
 }
 </script>
@@ -19,7 +22,6 @@ function openFood() {
     <div class="food-card"
     @click="openFood"
     >
-    
 
         <img 
         :src="food.image"
