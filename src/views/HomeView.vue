@@ -1,12 +1,27 @@
 <script setup>
 import { ref, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+
 import FoodCard from '../components/FoodCard.vue';
 import CategoryCard from '../components/CategoryCard.vue';
 import { useCategories } from '../components/useCategories.js';
 import { useHomepageFoods } from '../composables/useHomepageFoods.js';
 import { useCart } from '../composables/useCart.js';
 
+const router = useRouter();
+
 const selectedCategory = ref(null);
+
+function goToMenu(category) {
+  router.push({
+    name: 'menu',
+    params: {
+      category: category.id
+    }
+  });
+}
+
+
 const { categories, loadCategories } = useCategories();
 const { recentBought, popularDishes, loadRecentBought, loadPopularDishes } = useHomepageFoods();
 
@@ -32,8 +47,8 @@ onMounted( async () => {
       :key="category.id"
       :category="category"
       :selected="selectedCategory?.id === category.id"
+      @select="goToMenu($event)"
 
-      @select="selectedCategory = $event"
       />
     </section>
 
