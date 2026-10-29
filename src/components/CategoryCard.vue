@@ -23,6 +23,7 @@ defineEmits(['select']);
 </template>
 
 <style scoped lang="scss">
+
 .category-card {
     width: 200px;
     height: 110px;
