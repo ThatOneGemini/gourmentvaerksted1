@@ -1,22 +1,20 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import FoodCard from '../components/FoodCard.vue';
-import { useCart } from '../composables/useCart.js';
 import CategoryCard from '../components/CategoryCard.vue';
 import { useCategories } from '../components/useCategories.js';
+import { useHomepageFoods } from '../composables/useHomepageFoods.js';
+import { useCart } from '../composables/useCart.js';
 
 const selectedCategory = ref(null);
 const { categories, loadCategories } = useCategories();
+const { recentBought, popularDishes, loadRecentBought, loadPopularDishes } = useHomepageFoods();
 
-const testFood = {
-  title: "Forårsruller",
-  description: "Sprøde forårsruller med grøntsager og kød",
-  price: 69,
-  image: "/images/rolls.webp"
-};
+onMounted( async () => {
+  await loadCategories();
 
-onMounted(() => {
-  loadCategories();
+  await loadRecentBought();
+  await loadPopularDishes();
 });
 </script>
 
@@ -42,10 +40,25 @@ onMounted(() => {
     <section class="food-items">
 
       <h3>Recent Bought Items</h3>
-      <FoodCard :food="testFood" />
+
+      <div class="food-row">
+        <FoodCard 
+          v-for="food in recentBought"
+          :key="food.title"
+          :food="food"
+        />
+      </div>
+
 
       <h3> Popular Items of the week </h3>
-      <FoodCard :food="testFood" />
+
+      <div class="food-row">
+        <FoodCard 
+        v-for="food in popularDishes"
+        :key="food.title"
+        :food="food"
+        />
+      </div>
 
     </section>
     
@@ -53,9 +66,5 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.categories {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-}
+
 </style>

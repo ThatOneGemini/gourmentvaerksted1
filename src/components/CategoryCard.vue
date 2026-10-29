@@ -24,8 +24,8 @@ defineEmits(['select']);
 
 <style scoped lang="scss">
 .category-card {
-    width: 80px;
-    height: 80px;
+    width: 200px;
+    height: 110px;
 
     display: flex;
     flex-direction: column;
@@ -36,18 +36,24 @@ defineEmits(['select']);
     cursor: pointer;
 
     img {
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 50px;
     }
 
     span {
-        margin-top: 8px;
-        height: 32px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-color);
+        margin-top: 10px;
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
 .active {
-    border-color: #007bff;
-    background-color: #2d2d2d;
+    background-color: var(--secondary-btn);
 }
 </style>
