@@ -4,6 +4,9 @@ import { useRoute } from 'vue-router';
 import { db } from "../services/firebase";
 import { ref as dbRef, get} from "firebase/database";
 import BackButton from '../components/BackButton.vue';
+import { useCart } from '../composables/useCart.js';
+
+const { addToCart } = useCart();
 
 const route = useRoute();
 
@@ -67,6 +70,6 @@ const decrease = () => {
             </button>
 
         </div>
-        
+
      </div>
 </template>

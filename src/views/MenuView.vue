@@ -7,6 +7,8 @@ import { useMenu } from '../composables/useMenu.js';
 import SearchBar from '../components/SearchBar.vue';
 import FoodCard from '../components/FoodCard.vue';
 import BackButton from '../components/BackButton.vue';
+import CartBar from '../components/CartBar.vue';
+
 
 const route = useRoute();
 
@@ -48,6 +50,8 @@ const filteredFoods = computed(() => {
             :food="food" 
             />
         </div>
+
+        <CartBar />
 
     </div>
 </template>
