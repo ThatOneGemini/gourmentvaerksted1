@@ -1,9 +1,9 @@
 <script setup>
 import { computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRouter } from 'vue-router';
 import { useCart } from '../composables/useCart';
 
-const route = useRoute();
+const router = useRouter();
 
 const { cart } = useCart();
 
@@ -14,7 +14,7 @@ const totalPrice = computed(() =>
 );
 
 function goToCart() {
-    route.push("/cart");
+    router.push('/delivery-method');
 }
 </script>
 
@@ -23,7 +23,7 @@ function goToCart() {
         v-if="cart.length"
         class="cart-bar"
         @click="goToCart">
-        <span> Go to cart</span>
+        <span> Checkout</span>
         <span> {{ totalPrice }},00 kr.</span>
     </button>
 </template>

@@ -4,6 +4,8 @@ import MenuView from '../views/MenuView.vue'
 import FoodDetailView from '../views/FoodDetailView.vue'
 import CartView from '../views/CartView.vue'
 //import CheckoutView from '../views/CheckoutView.vue'
+import DeliveryFormView from '../views/DeliveryFormView.vue'
+
 
 
 
@@ -33,6 +35,14 @@ const router = createRouter({
       name: 'cart',
       component: CartView
     },
+
+    {
+      path: '/delivery-method',
+      name: 'delivery-method',
+      component: DeliveryFormView
+    },
+
+
   ],
 })
 

@@ -1,6 +1,9 @@
 <script setup>
 import { computed } from 'vue'
+import { useRouter } from 'vue-router';
 import CartItem from '../components/CartItem.vue'
+
+const router = useRouter()
 
 const props = defineProps({
   cart: {
@@ -14,7 +17,7 @@ const total = computed(() => {
 })
 
 const checkout = () => {
-  // Handle checkout logic
+  router.push('/delivery-method')
 }
 </script>
 
