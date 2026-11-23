@@ -31,8 +31,15 @@ const selectedMethod = ref('takeaway');
             </button>
         </div>
 
+        <h4>Åbningstider: Onsdag - Søndag</h4>
+        <h4>Tidspunkter: 15:00 - 21:00</h4>
+
         <TakeawayForm
         v-if="selectedMethod === 'takeaway'"
+        />
+
+        <DeliverForm 
+        v-if="selectedMethod === 'delivery'"
         />
     </div>
 </template>

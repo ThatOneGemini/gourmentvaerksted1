@@ -59,15 +59,16 @@ const decrease = () => {
 
         <div class="quantity-selector">
 
+            <button class="add-cart-btn" @click="addToCart(food)">
+                Add {{ food.price * quantity }},00 kr.
+            </button>
+
             <button class="quantity-btn" @click="decrease">-</button>
 
             <span> {{ quantity }}</span>
 
             <button class="quantity-btn" @click="increase">+</button>
 
-            <button class="add-cart-btn" @click="addToCart(food)">
-                Add {{ food.price * quantity }},00 kr.
-            </button>
 
         </div>
 

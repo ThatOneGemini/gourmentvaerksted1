@@ -3,8 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import MenuView from '../views/MenuView.vue'
 import FoodDetailView from '../views/FoodDetailView.vue'
 import CartView from '../views/CartView.vue'
-//import CheckoutView from '../views/CheckoutView.vue'
 import DeliveryFormView from '../views/DeliveryFormView.vue'
+import PaymentView from "../views/PaymentView.vue";
 
 
 
@@ -41,6 +41,12 @@ const router = createRouter({
       name: 'delivery-method',
       component: DeliveryFormView
     },
+
+    {
+    path: "/payment",
+    name: "payment",
+   component: PaymentView,
+    }
 
 
   ],

@@ -37,7 +37,6 @@ onMounted( async () => {
   <div class="home">
     <header>
       <h1>Welcome, Jane Doe</h1>
-      <p>What would you like to order today?</p>
     </header>
 
     <section class="categories">
@@ -54,7 +53,7 @@ onMounted( async () => {
 
     <section class="food-items">
 
-      <h3>Recent Bought Items</h3>
+      <h3>Sidste bestilling</h3>
 
       <div class="food-row">
         <FoodCard 
@@ -65,7 +64,7 @@ onMounted( async () => {
       </div>
 
 
-      <h3> Popular Items of the week </h3>
+      <h3>Ugens favorit</h3>
 
       <div class="food-row">
         <FoodCard 
