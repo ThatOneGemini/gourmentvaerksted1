@@ -21,6 +21,9 @@ function goToMenu(category) {
   });
 }
 
+const user = JSON.parse(
+  sessionStorage.getItem("currentUser")
+);
 
 const { categories, loadCategories } = useCategories();
 const { recentBought, popularDishes, loadRecentBought, loadPopularDishes } = useHomepageFoods();
@@ -36,7 +39,10 @@ onMounted( async () => {
 <template>
   <div class="home">
     <header>
-      <h1>Welcome, Jane Doe</h1>
+      <h1 v-if="user">
+        Velkommen {{ user?.firstName }}
+      </h1>
+
     </header>
 
     <section class="categories">

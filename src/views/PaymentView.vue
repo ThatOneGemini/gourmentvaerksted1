@@ -9,6 +9,16 @@ const firstName = ref("");
 const lastName = ref("");
 const phone = ref("");
 
+const user = JSON.parse(
+  sessionStorage.getItem("currentUser")
+);
+
+if (user) {
+  firstName.value = user.firstName;
+  lastName.value = user.lastName;
+  phone.value = user.phone;
+}
+
 const cardNumber = ref("");
 const expiryDate = ref("");
 const cvc = ref("");
