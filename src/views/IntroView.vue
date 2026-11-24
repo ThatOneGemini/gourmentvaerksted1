@@ -12,7 +12,7 @@ const getStarted = () => {
   <div class="intro-view">
 
     <img
-      src="../assets/logo.png"
+      src="/public/images/Logo.webp"
       alt="Gourmet Værkstedet"
     />
 

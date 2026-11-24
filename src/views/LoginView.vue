@@ -44,14 +44,16 @@ const login = async () => {
     <input
       type="text"
       v-model="name"
-      placeholder="Sif"
+      placeholder="Jane"
     />
+
+    <br>
 
     <label>Email</label>
     <input
       type="email"
       v-model="email"
-      placeholder="sif@gourmet.dk"
+      placeholder="janedoe@gmail.com"
     />
 
     <button @click="login">
