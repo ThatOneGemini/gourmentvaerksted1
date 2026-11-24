@@ -28,7 +28,7 @@ const showSuccessModal = ref(false);
 
 
 const backToMenu = () => {
-  router.push("/menu");
+  router.push("/home");
 };
 
 
