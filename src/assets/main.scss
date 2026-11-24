@@ -42,16 +42,166 @@ body {
     background: var(--background-color);
 }
 
+//IntroView.vue page
+.intro-view {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    img {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+
+        object-fit: cover;
+    }
+}
+
 .get-started-btn{
-    background: var(--primary-btn);
-    color: var(--background-color3);
+    background: var(--secondary-btn);
+    color: var(--text-color);
+    font-size: medium;
+    font-weight: 800;
 
     border: none;
     border-radius: 10px;
 
     padding: 12px 24px;
     width: 100%;
+    max-width: 330px;
 }
+//IntroView.vue page -END-
+
+//LoginView.vue page
+.login-view{
+    min-height: 100vh;
+    padding: 60px 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 60px;
+    }
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+
+    label{
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    
+}
+
+.login-form input[type="text"],
+.login-form input[type="email"] {
+    height: 48px;
+
+    border: 1px solid var(--background-color2);
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+}
+
+.remember-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 20px;
+  margin-bottom: 120px;
+
+  span {
+    font-weight: 700;
+  }
+  
+  input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+
+    accent-color: var(--border-color);
+  }
+}
+
+.continue-btn {
+  background: var(--primary-btn);
+  color: var(--text-color2);
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 14px;
+  width: 100%;
+
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+//LoginView.vue page -END-
+
+//HomeView.vue + Categories 
+.categories {
+    display: flex;
+
+    padding: 20px;
+
+    gap: 15px;
+
+    overflow-x: auto;
+
+    padding-bottom: 30px;
+}
+
+.category-card {
+    width: 200px;
+    height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+
+    cursor: pointer;
+
+    img {
+        width: 55px;
+        height: 50px;
+
+        margin-top: 10px;
+
+        object-fit: contain;
+    }
+
+    span {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-color);
+        margin-top: 10px;
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+//Categories -END-
 
 .food-list {
     display: flex;
@@ -121,50 +271,6 @@ p{
     cursor: pointer;
 }
 
-.category-card {
-    width: 200px;
-    height: 100px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
-
-    cursor: pointer;
-
-    img {
-        width: 55px;
-        height: 50px;
-
-        object-fit: contain;
-    }
-
-    span {
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--text-color);
-        margin-top: 10px;
-        height: 50px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-.categories {
-    display: flex;
-
-    padding-left: 17px;
-
-    gap: 15px;
-
-    overflow-x: auto;
-
-    padding-bottom: 30px;
-}
 
 .food-row {
 padding: 17px;
@@ -177,6 +283,7 @@ padding: 17px;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
 }
+//HomeView.vue page -END-
 
 .menu {
     display: flex;

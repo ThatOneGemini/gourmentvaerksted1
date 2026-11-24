@@ -37,28 +37,35 @@ const login = async () => {
 
 <template>
   <div class="login-view">
+    <h1>SIGN IN</h1>'
+    
+    <div class="login-form">
+      <label for="firstName">Navn</label>
+      <input
+        id="firstName"
+        type="text"
+        v-model="name"
+        placeholder="Jane"
+      />
 
-    <h1>SIGN IN</h1>
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        v-model="email"
+        placeholder="janedoe@gmail.com"
+      />
 
-    <label>Navn</label>
-    <input
-      type="text"
-      v-model="name"
-      placeholder="Jane"
-    />
+      <div class="remember-row">
+        <span>Husk min account</span>
+        <input type="checkbox" />
+      </div>
 
-    <br>
-
-    <label>Email</label>
-    <input
-      type="email"
-      v-model="email"
-      placeholder="janedoe@gmail.com"
-    />
-
-    <button @click="login">
-      Fortsæt
-    </button>
-
+      <button
+      class="continue-btn"
+      @click="login">
+        Fortsæt
+      </button>
+    </div>
   </div>
 </template>
