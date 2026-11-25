@@ -155,7 +155,7 @@ const submitPayment = () => {
         class="success-modal"
     >
     <h2>
-      Mange tak for din bestilling
+      Mange tak for din bestilling!
     </h2>
 
     <div class="pickup-box">
