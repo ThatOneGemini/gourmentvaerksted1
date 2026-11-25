@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { db } from "../services/firebase";
 import { ref as dbRef, get} from "firebase/database";
 import BackButton from '../components/BackButton.vue';
@@ -9,6 +9,7 @@ import { useCart } from '../composables/useCart.js';
 const { addToCart } = useCart();
 
 const route = useRoute();
+const router = useRouter();
 
 const food = ref(null);
 
@@ -38,6 +39,12 @@ const decrease = () => {
     }
 };
 
+const addAndReturnToMenu = () => {
+    addToCart(food.value);
+
+    router.push('/menu');
+};
+
 </script>
 
 <template>
@@ -46,7 +53,9 @@ const decrease = () => {
 
         <BackButton />
     
-        <img :src="food.image" />
+        <img :src="food.image"
+        class="food-image"
+        />
 
         <h1 class="food-title">{{ food.title }}</h1>
 
@@ -57,17 +66,23 @@ const decrease = () => {
         <!--button @click="addToCart(food)">Add to Cart</button-->
    
 
-        <div class="quantity-selector">
+        <div class="action-bar ">
 
-            <button class="add-cart-btn" @click="addToCart(food)">
-                Add {{ food.price * quantity }},00 kr.
+            <button class="add-cart-btn" @click="addToReturnToMenu(food)">
+                Tilføj {{ food.price * quantity }},00 kr.
             </button>
 
-            <button class="quantity-btn" @click="decrease">-</button>
+            <button class="quantity-btn" @click="decrease">
+                -
+            </button>
 
-            <span> {{ quantity }}</span>
+            <span class="quantity-number"> 
+                {{ quantity }}
+            </span>
 
-            <button class="quantity-btn" @click="increase">+</button>
+            <button class="quantity-btn" @click="increase">
+                +
+            </button>
 
 
         </div>
