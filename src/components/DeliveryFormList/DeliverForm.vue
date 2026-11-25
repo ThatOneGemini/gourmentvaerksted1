@@ -10,14 +10,28 @@ const goToPayment = () => {
 </script>
 
 <template>
-  <div>
+  <div class="delivery-form">
 
-    <input placeholder="Adresse" />
-    
-    <br>
+    <label>Adresse</label>
+    <input placeholder="Angiv din adresse" />
 
-    <input placeholder="By" />
-    <input placeholder="Postnummer" />
+    <div class="city-row">
+      <div>
+        <label>By</label>
+        <input placeholder="By" />
+      </div>
+
+      <div>
+        <label>Post nr.</label>
+        <input placeholder="Postnummer" />
+      </div>
+    </div>
+
+    <div class="save-address">
+      <label>Gem adressen</label>
+
+      <input type="checkbox" />
+    </div>
 
     <button
       class="continue-btn"
