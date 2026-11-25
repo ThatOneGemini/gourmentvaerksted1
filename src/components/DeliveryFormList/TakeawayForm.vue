@@ -48,7 +48,10 @@ const showTimeSelector = ref(false);
       />
     </div>
 
-    <p v-if="pickupTime">
+    <p 
+    v-if="pickupTime"
+    class="selected-time"
+    >
       Valgt tidspunkt: {{ pickupTime }}
     </p>
 
@@ -57,14 +60,18 @@ const showTimeSelector = ref(false);
     </p>
 
     <button
-      class="time-btn"
+      class="select-time-btn"
       @click="showTimeSelector = !showTimeSelector"
     >
       Vælg tidspunkt
     </button>
 
-    <div v-if="showTimeSelector">
-      <select v-model="pickupTime">
+    <div v-if="showTimeSelector"
+    class="time-selector"
+    >
+      <select
+      v-model="pickupTime"
+      @change="showTimeSelector = false">
         <option disabled value="">
           Vælg tidspunkt
         </option>

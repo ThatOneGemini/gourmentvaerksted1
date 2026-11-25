@@ -31,8 +31,16 @@ const selectedMethod = ref('takeaway');
             </button>
         </div>
 
-        <h4>Åbningstider: Onsdag - Søndag</h4>
-        <h4>Tidspunkter: 15:00 - 21:00</h4>
+        <div class="opening-hours">
+            <span>Address:</span>
+            <span>Overgade 59A, 5000 Odense C</span>
+
+            <span>Åbningstider:</span>
+            <span>Onsdag - Søndag</span>
+
+            <span>Tidspunkter:</span>
+            <span>15:00 - 21:30</span>
+        </div>
 
         <TakeawayForm
         v-if="selectedMethod === 'takeaway'"

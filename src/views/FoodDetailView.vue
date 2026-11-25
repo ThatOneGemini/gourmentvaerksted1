@@ -42,7 +42,7 @@ const decrease = () => {
 const addAndReturnToMenu = () => {
     addToCart(food.value);
 
-    router.push('/menu');
+    router.push('/menu/2');
 };
 
 </script>
@@ -68,7 +68,7 @@ const addAndReturnToMenu = () => {
 
         <div class="action-bar ">
 
-            <button class="add-cart-btn" @click="addToReturnToMenu(food)">
+            <button class="add-cart-btn" @click="addAndReturnToMenu(food)">
                 Tilføj {{ food.price * quantity }},00 kr.
             </button>
 
