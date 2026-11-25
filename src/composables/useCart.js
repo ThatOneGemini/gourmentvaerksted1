@@ -5,6 +5,8 @@ const cart = ref ([]);
 export function useCart() {
 
     const addToCart = (food) => {
+
+        console.log("Food received:", food); //temporarily//
         
         const existing = cart.value.find(
             item => item.id === food.id
@@ -17,6 +19,8 @@ export function useCart() {
                 ...food,
                 quantity: 1
             });
+
+            console.log("Cart now:", cart.value); //temporarily//
         }
     };
 

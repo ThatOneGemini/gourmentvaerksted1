@@ -619,19 +619,128 @@ p{
         margin: 20px 0;
     }
 }
-
+//DeliveryForm.vue -END-
 
 //PaymentView.vue
 .payment-view {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    padding: 20px 10px;
+    gap: 12px;
+
+    h2{
+        margin-top: 50px;
+        margin-bottom: 24px;
+    }
+
+    label{
+        display: block;
+
+        margin-bottom: 8px;
+        margin-top: 16px;
+
+        font-weight: 600;
+    }
+
+    input{
+        width: 100%;
+        height: 48px;
+
+        border-radius: 8px;
+        border: 1px solic var(--background-color2);
+
+        padding: 0 12px;
+    }
+}
+
+.order-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 20px 0 30px;
+}
+
+.order-info {
+    flex: 1;
+
+    h4 {
+        font-size: 20px;
+        font-weight: 700;
+
+        margin-bottom: 15px;
+    }
+}
+
+.order-price {
+    font-size: 22px;
+    font-weight: 700;
+
+    color: var(--text-color);
+}
+
+.order-image-wrapper {
+    position: relative;
+}
+
+.order-image {
+    width: 95px;
+    height: 95px;
+
+    border-radius: 12px;
+    object-fit: cover;
+
+    border: 1px solid var(--primary-btn);
+}
+
+.item-count {
+    position: absolute;
+
+    top: -8px;
+    right: -8px;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: var(--primary-btn);
+    color: var(--text-color2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12px;
+    font-weight: 700;
 }
 
 .payment-view input {
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--background-color3);
+}
+
+.pay-btn{
+    width: 100%;
+    height: 52px;
+
+    margin-top: 24px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: var(--primary-btn);
+    color: var(--text-color2);
+
+    font-size: 20px;
+    font-weight: 700;
+
+    :disabled {
+        opacity: 0.5;
+    }
 }
 
 .card-row {
@@ -680,4 +789,15 @@ p{
   padding: 16px;
 
   margin: 24px 0;
+}
+
+.back-menu-btn {
+  background-color: var(--primary-btn);
+  color: var(--background-color);
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 12px 24px;
+  width: 100%;
 }

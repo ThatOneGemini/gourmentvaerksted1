@@ -40,7 +40,11 @@ const decrease = () => {
 };
 
 const addAndReturnToMenu = () => {
+    console.log("adding:", food.value); //temporarily//
+
     addToCart(food.value);
+
+    console.log("added to cart"); //temporarily//
 
     router.push('/menu/2');
 };

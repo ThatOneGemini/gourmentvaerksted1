@@ -1,9 +1,12 @@
 <script setup>
 import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
+import { useCart } from '../composables/useCart'
 import BackButton from '../components/BackButton.vue';
 
 const router = useRouter();
+
+const { cart } = useCart();
 
 const firstName = ref("");
 const lastName = ref("");
@@ -63,6 +66,31 @@ const submitPayment = () => {
 
     <h2>Betaling</h2>
 
+    <div
+    v-for="item in cart"
+    :key="item.id"
+    class="order-summary"
+    >
+      <div class="order-info">
+        <h4> {{ item.title }}</h4>
+
+        <div class="order-price">
+          {{ item.price  * item.quantity}},00 kr.
+        </div>
+      </div>
+
+      <div class="order-image-wrapper">
+        <img
+          :src="item.image"
+          class="order-image"
+        />
+
+        <span class="item-count">
+          {{ item.quantity }}
+        </span>
+      </div>
+    </div>
+
     <label>Navn</label>
     <input
       type="text"
@@ -114,6 +142,7 @@ const submitPayment = () => {
     </div>
 
     <button
+      class="pay-btn"
       :disabled="!canPay"
       @click="submitPayment"
     >
