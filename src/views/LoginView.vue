@@ -30,7 +30,7 @@ const login = async () => {
 
     router.push("/home");
   } else {
-    alert("Forkert navn eller email");
+    alert("Forkert navn eller email. Prøv at skrive Navn: Jane og Email: janedoe@gmail.com.");
   }
 };
 </script>
